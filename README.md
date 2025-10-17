@@ -19,10 +19,7 @@ A modern, full-stack web application that streams real-time cryptocurrency price
 Experience the real-time cryptocurrency price streaming in action:
 
 <div align="center">
-  <video width="800" controls>
-    <source src="RealTimeCryptoproject.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <img src="RealTimeCryptoproject.gif" alt="Crypto Stream Demo" width="800"/>
   <p><em>Live cryptocurrency price tracking with instant updates and modern UI</em></p>
 </div>
 
