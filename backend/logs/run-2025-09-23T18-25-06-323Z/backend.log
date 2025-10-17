@@ -1,0 +1,43 @@
+[logging] Writing backend logs to: C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\logs\run-2025-09-23T18-25-06-323Z\backend.log
+[ConnectRpcService] ConnectRPC service initialized
+[backend] Listening on http://localhost:4000
+[backend] ConnectRPC endpoint: http://localhost:4000/pluto.ticker.TickerService/
+[backend] Health check: http://localhost:4000/health
+[backend] Stats endpoint: http://localhost:4000/api/stats
+[ConnectRpcService] Client client-1758651907396-4mod3q8hg subscribing to NIFTY50
+[ConnectRpcService] Starting scraping for NIFTY50
+[browserManager] Launched browser (headed mode) for scalable resource sharing.
+[browserManager] Created new context for NIFTY50
+[scraper] Opening https://www.tradingview.com/symbols/NIFTY50/?exchange=BINANCE for NIFTY50
+[scraper] Successfully loaded TradingView page for NIFTY50
+[scraper] Validation failed for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[scraper] Failed to load TradingView page for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Error starting scraper for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Client client-1758651919602-y0tm5dbxp subscribing to NIFTY50
+[ConnectRpcService] Starting scraping for NIFTY50
+[browserManager] Created new context for NIFTY50
+[scraper] Opening https://www.tradingview.com/symbols/NIFTY50/?exchange=BINANCE for NIFTY50
+[scraper] Successfully loaded TradingView page for NIFTY50
+[scraper] Validation failed for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[scraper] Failed to load TradingView page for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[ConnectRpcService] Error starting scraper for NIFTY50: Error: Price selectors not found (title: Page not found — TradingView). Possibly invalid symbol or unsupported exchange.
+    at createTickerScraper [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\playwright\scraper.ts:25:15[90m)[39m
+    at ConnectRpcService.startScraping [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:229:23[90m)[39m
+    at ConnectRpcService.<anonymous> [90m(C:\Users\harsh\Coding-Assessment-Project\fullstack-coding-assessment-1--harshavardhanmannem\backend\[39msrc\services\connectRpcService.ts:60:15[90m)[39m
+[browserManager] Received SIGINT, cleaning up browser resources...
+[browserManager] Context for NIFTY50 closed and cleaned up
