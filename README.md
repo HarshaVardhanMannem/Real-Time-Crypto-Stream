@@ -3,6 +3,27 @@
 ## Overview
 A modern, full-stack web application that streams real-time cryptocurrency prices directly from TradingView. Built with TypeScript, Next.js, and Node.js, featuring a beautiful UI with dark mode support and responsive design.
 
+## 💡 Problem Statement & Use Cases
+
+### The Problem
+Tracking live cryptocurrency prices typically requires manually refreshing exchange websites, paying for premium data feeds, or integrating complex WebSocket APIs. Existing solutions are either too expensive, too complex, or locked behind proprietary platforms — leaving developers and enthusiasts without a simple, open, self-hosted way to access real-time price streams.
+
+**Crypto Stream solves this by:**
+- 🔓 **No API keys required** — prices sourced directly from TradingView's public interface
+- ⚡ **Zero-latency streaming** — server-push architecture delivers updates the moment they change
+- 🧩 **Plug-and-play** — a single script starts the entire stack locally in seconds
+- 🌐 **All tickers supported** — any symbol listed on TradingView works out of the box
+
+### Who Is This For?
+
+| Use Case | Description |
+|---|---|
+| 📈 **Portfolio Trackers** | Build personal dashboards that display live prices for your holdings without any subscription fees |
+| 🤖 **Trading Bots** | Feed real-time price data into algorithmic trading or alert systems |
+| 📊 **Data Analysts** | Capture live price streams for research, backtesting datasets, or market analysis |
+| 🎓 **Learning Projects** | Study real-world streaming architectures (gRPC, Playwright, React) with a working reference implementation |
+| 🖥️ **Custom Dashboards** | Embed live crypto prices into home-lab dashboards, Notion widgets, or internal tools |
+
 ## 🚀 Key Features
 
 - **Real-time Price Streaming**: Live cryptocurrency prices from TradingView via Playwright automation
@@ -27,16 +48,55 @@ Experience the real-time cryptocurrency price streaming in action:
 
 ### System Components
 
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   Backend       │    │   TradingView   │
-│   (Next.js)     │◄──►│   (Node.js)     │◄──►│   (Playwright)  │
-│                 │    │                 │    │                 │
-│ • React UI      │    │ • Express       │    │ • Web Scraping  │
-│ • ConnectRPC    │    │ • ConnectRPC    │    │ • Price Data    │
-│ • Theme Context │    │ • Playwright    │    │ • Live Updates  │
-│ • Real-time     │    │ • Cache Layer   │    │                 │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+```mermaid
+flowchart TD
+    User(["👤 User\n(Browser)"])
+
+    subgraph FE ["🖥️  Frontend — Next.js · React · TypeScript"]
+        direction TB
+        F1["AddTickerForm\nEnter symbol e.g. BTCUSD"]
+        F2["useTickerStream\nCustom streaming hook"]
+        F3["TickerList\nLive price display"]
+        F1 --> F2 --> F3
+    end
+
+    subgraph BE ["⚙️  Backend — Node.js · Express · ConnectRPC"]
+        direction TB
+        B1["ConnectRPC Service\nServer-streaming endpoint"]
+        B2["In-Memory Cache\nPer-symbol price store"]
+        B1 --> B2
+    end
+
+    subgraph SC ["🔍  Scraper Layer — Playwright · Chromium"]
+        direction TB
+        S1["Browser Manager\nShared Chromium instance"]
+        S2["TradingView Scraper\nCSS-selector price watcher"]
+        S1 --> S2
+    end
+
+    TV["🌐 TradingView\n(External Data Source)"]
+
+    User -->|"1 · Enter ticker"| F1
+    F2 -->|"2 · Server-Streaming RPC"| B1
+    B2 -->|"3 · Cache miss → launch"| S1
+    S2 -->|"4 · Navigate & watch"| TV
+    TV -->|"5 · Raw HTML price"| S2
+    S2 -->|"6 · Validated price update"| B1
+    B2 -->|"7 · Cache hit → instant reply"| B1
+    B1 -->|"8 · Streamed response"| F2
+    F2 -->|"9 · React state update"| F3
+
+    classDef fe fill:#4F46E5,stroke:#3730A3,color:#fff,rx:8
+    classDef be fill:#059669,stroke:#047857,color:#fff,rx:8
+    classDef sc fill:#D97706,stroke:#B45309,color:#fff,rx:8
+    classDef tv fill:#DC2626,stroke:#B91C1C,color:#fff,rx:8
+    classDef user fill:#6D28D9,stroke:#5B21B6,color:#fff,rx:8
+
+    class F1,F2,F3 fe
+    class B1,B2 be
+    class S1,S2 sc
+    class TV tv
+    class User user
 ```
 
 ### Data Flow Architecture
